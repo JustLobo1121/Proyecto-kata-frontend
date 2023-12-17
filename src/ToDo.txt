@@ -1,0 +1,7 @@
+- añadir forma para eliminar guardados
+- limpieza de codigo
+- cambio de icono de uno que este guardado o una alerta
+
+desafio personal
+- pa joder un rato un inicio de sesion
+- incorporar el local storage
