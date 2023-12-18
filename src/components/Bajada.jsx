@@ -3,7 +3,7 @@ import '../Bajada.css'
 const Bajada = () => {
     return (
         <footer className='footer'>
-            <p>Bienvenido</p>
+            <h4>manuel.eduardo.hernandez255@gmail.com 👍</h4>
         </footer>
     )
 }

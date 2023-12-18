@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FavsContext } from "../context/FavsContext";
+import { FavsContext } from "./FavsContext";
 
 export const useFavs = () => {
     const context = useContext(FavsContext)

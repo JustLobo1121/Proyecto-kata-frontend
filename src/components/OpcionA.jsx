@@ -2,7 +2,7 @@
 import { Container, Card, Button, CardFooter, Modal } from "react-bootstrap"
 import { detectorIBA, detectorIng, detectorInst } from "./popDatos";
 import { useEffect, useState } from "react"
-import { useFavs } from "../hook/useFavs";
+import { useFavs } from "../context/useFavs";
 
 function OpcionA() {
     const { AddtoFavs } = useFavs()
@@ -42,7 +42,6 @@ function OpcionA() {
             const idObj = post.idDrink
             return idObj.includes(destino)
         })
-        console.log(datoObj[0])
         AddtoFavs(datoObj[0])
     }
     return (

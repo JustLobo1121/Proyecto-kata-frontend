@@ -20,13 +20,13 @@ const TopNavBar = () => {
                   <Nav.Link as={Link}to='/BebidasB'>Bebidad con B</Nav.Link>
                 </NavItem>
                 <NavItem eventkey={1} href="/">
-                  <Nav.Link as={Link}to='/Favoritos'>Favoritos</Nav.Link>
-                </NavItem>
-                <NavItem eventkey={1} href="/">
                   <Nav.Link as={Link}to='/Filtros'>Filtros</Nav.Link>
                 </NavItem>
                 <NavItem eventkey={1} href='/'>
                   <Nav.Link as={Link} to='/Busqueda'>Busqueda</Nav.Link>
+                </NavItem>
+                <NavItem eventkey={1} href="/">
+                  <Nav.Link as={Link}to='/Favoritos'>Favoritos</Nav.Link>
                 </NavItem>
               </Nav>
             </Navbar.Collapse>

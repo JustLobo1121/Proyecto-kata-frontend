@@ -1,7 +1,7 @@
 import { Container, Card, Button, CardFooter, Modal, Form } from "react-bootstrap"
 import { detectorIBA, detectorIng, detectorInst } from "./popDatos";
 import { useEffect, useState } from "react"
-import { useFavs } from "../hook/useFavs";
+import { useFavs } from "../context/useFavs";
 
 function Busqueda() {
     const {AddtoFavs} = useFavs()

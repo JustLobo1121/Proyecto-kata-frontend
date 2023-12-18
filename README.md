@@ -9,7 +9,4 @@ la pagina simula una licoleria!
   - busqueda individual por bebida
   - sistema de guardados
 - posiblilidad que sea agregado:
-  - inicio de sesion
-  - localstorage
-  - paginacion
-  - filtrado por todas las letras
+  - inicio de sesion (esto no pude agregarlo bien)

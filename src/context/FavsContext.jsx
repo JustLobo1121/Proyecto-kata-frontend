@@ -19,12 +19,15 @@ export function FavProvider({ children }) {
             }
         ]))
     }
-
+    const DeletToFavs = Drink => {
+        const sel = fav.filter(item => item.idDrink != Drink.idDrink)
+        setFavs(sel)
+    }
     const ClearFavs = () =>{
         setFavs([]) 
     }
     return (
-        <FavsContext.Provider value={{fav,AddtoFavs,ClearFavs}}>
+        <FavsContext.Provider value={{fav,AddtoFavs,ClearFavs,DeletToFavs}}>
             {children}
         </FavsContext.Provider>
     )

@@ -1,7 +1,7 @@
 import { Container, Card, Button, CardFooter, Modal } from "react-bootstrap"
 import { detectorIBA, detectorIng, detectorInst } from "./popDatos";
 import { useEffect, useState } from "react"
-import { useFavs } from "../hook/useFavs";
+import { useFavs } from "../context/useFavs";
 
 function OpcionB() {
     const {AddtoFavs} = useFavs()

@@ -5,10 +5,10 @@
 import { Container, Card, CardFooter, Button, Modal } from "react-bootstrap"
 import { detectorIBA, detectorIng, detectorInst } from "./popDatos"
 import { useState, useEffect } from "react"
-import { useFavs } from "../hook/useFavs"
+import { useFavs } from "../context/useFavs"
 
 function Favoritos() {
-    const {fav} = useFavs()
+    const {fav, DeletToFavs} = useFavs()
     const data = fav
     const [show, setShow] = useState(false);
     const [dataModal, setdataModal] = useState([])
@@ -24,7 +24,15 @@ function Favoritos() {
         })
         setdataModal(datoObj[0])
     }
-    
+    const eventoEliminar = (e) => {
+        const destino = e.target.dataset.id
+        const datoObj = data.filter((post) => {
+            const idObj = post.idDrink
+            return idObj.includes(destino)
+        })
+        DeletToFavs(datoObj[0])
+    }
+
     return(
         <Container fluid className="row justify-content-space-around" style={{paddingTop: '5rem'}}>
             {data != 0 ? data.map((post) => (
@@ -39,7 +47,7 @@ function Favoritos() {
                         <Button variant="primary" onClick={(e) => {eventoClick(e)}} data-id={post.idDrink}>
                             Ver mas
                         </Button>
-                        <Button variant="secondary" data-id={post.idDrink}>eliminar!</Button>
+                        <Button variant="secondary" onClick={(e) => {eventoEliminar(e)}} data-id={post.idDrink}>eliminar!</Button>
                     </CardFooter>
               </Card>
             )) : <h1>No tienes guardados!</h1>}
