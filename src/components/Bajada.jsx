@@ -3,7 +3,7 @@ import '../Bajada.css'
 const Bajada = () => {
     return (
         <footer className='footer'>
-            <h4>manuel.eduardo.hernandez255@gmail.com -
+            <h4>manuel.eduardo.hernandez255@gmail.com - 
                 <a href='https://github.com/JustLobo1121' target="_blank" rel="noopener noreferrer">
                     github
                 </a>
