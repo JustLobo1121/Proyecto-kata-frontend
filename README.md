@@ -2,6 +2,7 @@
 ---------------------------------------
 la pagina simula una licoleria!
 - api utilizada: https://www.thecocktaildb.com/api.php
+- se uso react, react-router, react-bootstrap, bootstrap
 - uso de react bootstrap
 - caracteristicas:
   - filtrado por categoria
