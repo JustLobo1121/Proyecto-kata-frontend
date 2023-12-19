@@ -1,3 +1,5 @@
+/* eslint-disable no-constant-condition */
+/* eslint-disable no-prototype-builtins */
 
 export const detectorInst = (dato) => {
     if (dato.strInstructionsES == null) {
@@ -14,25 +16,26 @@ export const detectorIBA = (dato) => {
     }
 }
 export const detectorIng = (dato) => {
-    if (dato.strIngredient5 == null) {
-        return `Ingredientes: ${dato.strIngredient1}, ${dato.strIngredient2} ${dato.strIngredient3} y ${dato.strIngredient4}`
-    } else if (dato.strIngredient5 != null) {
-        return `Ingredientes: ${dato.strIngredient1}, ${dato.strIngredient2}, ${dato.strIngredient3}, ${dato.strIngredient4} y ${dato.strIngredient5}`
-    }
-    if (dato.strIngredient4 == null) {
-        return `Ingredientes: ${dato.strIngredient1}, ${dato.strIngredient2} y ${dato.strIngredient3}`
-    } else if (dato.strIngredient4 != null) {
-        return `Ingredientes: ${dato.strIngredient1}, ${dato.strIngredient2}, ${dato.strIngredient3} y ${dato.strIngredient4}`
-    }
-    if (dato.strIngredient3 == null) {
-        return `Ingredientes: ${dato.strIngredient1} y ${dato.strIngredient2}`
-    } else if (dato.strIngredient3 != null) {
-        return `Ingredientes: ${dato.strIngredient1}, ${dato.strIngredient2} y ${dato.strIngredient3}`
-    }
-    if (dato.strIngredient2 == null) {
-        return `Ingrediente: ${dato.strIngredient1}`
-    } else if (dato.strIngredient2 != null) {
-        return `Ingredientes: ${dato.strIngredient1} y ${dato.strIngredient2}`
-    }
-    // esto no se como mejorarlo :P
+    function buscarPropiedades(objeto, patron, condicion) {
+        let indice = 1;
+        let propiedadesEncontradas = [];
+        while (true) {
+          let propiedad = patron + indice;
+          if (!objeto.hasOwnProperty(propiedad)) {
+            break;
+          }
+          if (condicion(objeto[propiedad])) {
+            propiedadesEncontradas.push(objeto[propiedad]);
+          } else {
+            break;
+          }
+          indice++;
+        }
+        return propiedadesEncontradas.join(', ');
+      }
+      
+      var resultado = buscarPropiedades(dato, 'strIngredient', function(valor) {
+        return typeof valor === 'string' && valor.trim() !== '';
+      });
+      return `Ingredientes: ${resultado}`
 }
